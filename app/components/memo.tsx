@@ -5,7 +5,6 @@ import { PlusCircleIcon } from "lucide-react"
 import { Dispatch, ReactNode, SetStateAction, memo, useState } from "react"
 
 const ParentComponent = ({ children, count1, setCount1 }: { children: ReactNode; count1: number; setCount1: Dispatch<SetStateAction<number>> }) => {
-  console.log("親レンダリング");
 
   return (
     <div className="p-2 border rounded-md w-full">
@@ -24,7 +23,6 @@ const ParentComponent = ({ children, count1, setCount1 }: { children: ReactNode;
 }
 
 const ChildComponent = memo(({ count2, setCount2 }: { count2: number; setCount2: Dispatch<SetStateAction<number>> }) => {
-  console.log("子レンダリング");
 
   return (
     <div className="p-2 border rounded-md w-full">
@@ -40,6 +38,8 @@ const ChildComponent = memo(({ count2, setCount2 }: { count2: number; setCount2:
     </div>
   )
 })
+
+ChildComponent.displayName = "ChildComponent"; // ビルドエラーを避けるため => Error: Component definition is missing display name  react/display-name
 
 const useMemoComponent = () => {
   const [ count1, setCount1 ] = useState<number>(0);
