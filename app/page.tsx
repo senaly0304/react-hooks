@@ -2,6 +2,7 @@ import UseStateComponent from "./components/useState";
 import UseEffectComponent from "./components/useEffect";
 import UseRefComponent from "./components/useRef";
 import UseContextComponent from "./components/useContext";
+import UseReducerComponent from "./components/useReducer";
 import MemoComponent from "./components/memo";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <UseEffectComponent />
         <UseRefComponent />
         <UseContextComponent />
+        <UseReducerComponent />
         <MemoComponent />
       </div>
     </main>
